@@ -1,22 +1,22 @@
 <template>
-  <section class="grid md:grid-cols-2 gap-8">
+  <section class="section grid md:grid-cols-2 gap-8" v-if="hero">
     <div class="flex flex-col justify-center row-start-2 md:row-start-1">
       <h1 class="text-4xl font-bold text-gray-800">
-        {{ hero?.heading }}
+        {{ hero.heading }}
       </h1>
       <p class="mt-4 text-gray-600">
-        {{ hero?.content }}
+        {{ hero.content }}
       </p>
       <button class="mt-4 btn btn-primary">
-        {{ hero?.buttonText }}
+        {{ hero.buttonText }}
       </button>
     </div>
     <div class="flex justify-center">
       <img
-        :src="hero?.image.url"
-        :alt="hero?.image.description"
-        :width="hero?.image.width"
-        :height="hero?.image.height"
+        :src="hero.image.url"
+        :alt="hero.image.description"
+        :width="hero.image.width"
+        :height="hero.image.height"
         class="object-cover w-full h-full aspect-square"
       />
     </div>

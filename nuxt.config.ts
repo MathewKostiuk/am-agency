@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    gmailAddress: process.env.GMAIL_ADDRESS,
+    gmailAppPassword: process.env.GMAIL_APP_PASSWORD,
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/apollo'

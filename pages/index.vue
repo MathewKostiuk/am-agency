@@ -1,3 +1,5 @@
 <template>
-  <HeroSection />
+  <SectionHero />
+  <SectionServices />
+  <SectionContact />
 </template>
