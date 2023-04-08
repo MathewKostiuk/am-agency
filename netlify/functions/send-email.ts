@@ -1,6 +1,5 @@
 import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 import nodemailer from 'nodemailer'
-const runtimeConfig = useRuntimeConfig()
 
 type EmailFormData = {
   name: string | null;
@@ -12,8 +11,8 @@ type EmailFormData = {
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: `${runtimeConfig.gmailAddress}`,
-    pass: `${runtimeConfig.gmailAppPassword}`
+    user: `${process.env.GMAIL_ADDRESS}`,
+    pass: `${process.env.GMAIL_APP_PASSWORD}`
   }
 });
 
@@ -22,7 +21,7 @@ const handler: Handler = async (event: HandlerEvent) => {
 
   // Create an email options object
   const mailOptions = {
-    to: `${runtimeConfig.gmailAddress}`,
+    to: `${process.env.GMAIL_ADDRESS}`,
     subject: 'Website contact form submission',
     text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
   }
