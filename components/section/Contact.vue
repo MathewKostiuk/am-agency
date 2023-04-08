@@ -26,7 +26,7 @@ const formData = ref<EmailFormData>({
 });
 
 const sendEmail = async () => {
-  const response = await fetch('/api/send-email', {
+  const response = await fetch('/.netlify/functions/send-email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
