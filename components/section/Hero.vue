@@ -4,17 +4,17 @@
     v-if="hero"
   >
     <div
-      class="flex flex-col justify-center text-white items-center text-center lg:text-left lg:items-start"
+      class="flex flex-col gap-4 justify-center text-white items-center text-center lg:text-left lg:items-start"
     >
       <h1 class="text-heading-3 lg:text-heading-1 font-bold">
         {{ hero.heading }}
       </h1>
-      <p class="mt-4 text-body-2 lg:text-body-1">
+      <p class="text-body-2 lg:text-body-1">
         {{ hero.content }}
       </p>
-      <button class="mt-4 btn btn-primary">
+      <a class="btn btn-primary" :href="hero?.buttonUrl">
         {{ hero.buttonText }}
-      </button>
+      </a>
     </div>
     <div class="flex justify-center">
       <img
@@ -31,6 +31,7 @@ type HeroSectionResponse = {
   heroSection: {
     heading: string;
     buttonText: string;
+    buttonUrl: string;
     content: string;
     image: {
       url: string;
@@ -47,6 +48,7 @@ const query = gql`
     heroSection(id: "2Cro3fZCrmepEmJqeb1LS8") {
       heading
       buttonText
+      buttonUrl
       content
       image {
         url
