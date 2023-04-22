@@ -5,12 +5,21 @@
   </main>
 </template>
 
-<style>
+<style lang="scss">
 .btn {
-  @apply px-4 py-2 text-white bg-blue-500 rounded-md;
+  @apply px-8 py-4 text-white bg-accent rounded-lg uppercase;
+
+  &:hover,
+  &:active {
+    @apply bg-accent-dark;
+  }
+
+  &:focus {
+    @apply border-[4px] border-focus outline-none;
+  }
 }
 
 .section {
-  @apply px-8 max-w-[1200px] m-auto;
+  @apply px-[20px] mx-auto lg:px-[100px];
 }
 </style>

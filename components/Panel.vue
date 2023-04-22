@@ -1,7 +1,7 @@
 <template>
   <div
-    class="panel absolute top-full left-0 w-full border-y-[1px] border-border-primary"
-    :class="{ 'panel--open': open, 'panel--closed': !open }"
+    class="panel absolute top-full left-0 w-full border-border-primary"
+    :class="{ 'panel--open border-y-[1px]': open, 'panel--closed': !open }"
   >
     <ul
       class="flex flex-col gap-[38px] justify-center items-center py-[98px] bg-white"
