@@ -1,34 +1,40 @@
 <template>
   <section
     v-if="ourServices"
-    class="max-w-[550px] m-auto text-center lg:px-8 lg:max-w-[1200px]"
+    class="m-auto text-center px-[20px] lg:px-8 text-primary"
   >
-    <h2 class="text-4xl font-bold text-gray-800">
+    <h2 class="section-heading">
       {{ ourServices.heading }}
     </h2>
-    <div class="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-[20px] mt-[86px] lg:grid-cols-3">
       <div
-        v-for="service in ourServices.serviceCollection.items"
-        :key="service?.heading"
-        class="flex flex-col justify-center items-center"
+        v-for="{ heading, subheading, image, description } in ourServices
+          .serviceCollection.items"
+        :key="heading"
+        class="card"
       >
-        <img
-          v-if="service.image"
-          :src="service.image?.url"
-          :alt="service.image?.description"
-          :width="service.image?.width"
-          :height="service.image?.height"
-          class="object-cover w-full h-full aspect-square"
-        />
-        <h3 class="mt-4 text-2xl font-bold text-gray-800">
-          {{ service?.heading }}
+        <div class="relative">
+          <img
+            v-if="image"
+            :src="image?.url"
+            :alt="image?.description"
+            :width="image?.width"
+            :height="image?.height"
+            class="object-cover w-[115px] h-[115px] aspect-square"
+          />
+          <span
+            class="absolute inset-0 block w-full h-full bg-primary rounded-full opacity-10"
+          ></span>
+        </div>
+        <h3 class="text-body-1 md:text-heading-4 font-bold" v-if="heading">
+          {{ heading }}
         </h3>
-        <p class="mt-4 text-gray-600">
-          {{ service?.description }}
+        <h4 class="text-body-2" v-if="subheading">
+          {{ subheading }}
+        </h4>
+        <p class="text-body-3 text-body-text" v-if="description">
+          {{ description }}
         </p>
-        <button class="mt-4 btn btn-primary w-auto">
-          {{ service?.button }}
-        </button>
       </div>
     </div>
   </section>
@@ -37,23 +43,23 @@
 <script lang="ts" setup>
 type OurServicesSectionResponse = {
   ourServicesSection: {
-    heading: string
+    heading: string;
     serviceCollection: {
       items: {
-        heading: string
-        description: string
-        button: string
+        heading: string;
+        subheading: string;
+        description: string;
         image: {
-          url: string
-          width: number
-          height: number
-          description: string
-          title: string
-        }
-      }[]
-    }
-  }
-}
+          url: string;
+          width: number;
+          height: number;
+          description: string;
+          title: string;
+        };
+      }[];
+    };
+  };
+};
 
 const query = gql`
   query ourServicesSectionEntryQuery {
@@ -61,10 +67,10 @@ const query = gql`
       heading
       serviceCollection {
         items {
-          ...on Service {
+          ... on Service {
             heading
+            subheading
             description
-            button
             image {
               url
               height
@@ -77,8 +83,8 @@ const query = gql`
       }
     }
   }
-`
+`;
 
-const { data } = await useAsyncQuery<OurServicesSectionResponse>(query)
-const ourServices = data.value?.ourServicesSection
+const { data } = await useAsyncQuery<OurServicesSectionResponse>(query);
+const ourServices = data.value?.ourServicesSection;
 </script>

@@ -21,5 +21,19 @@
 
 .section {
   @apply px-[20px] mx-auto lg:px-[100px];
+
+  &-heading {
+    @apply relative inline-block text-heading-4 sm:text-heading-2 font-semibold;
+
+    &::after {
+      @apply absolute left-0 bottom-[-20px] block w-[60px] h-[2px] bg-accent;
+      content: "";
+    }
+  }
+}
+
+.card {
+  @apply flex flex-col gap-2 items-center justify-between rounded-lg px-[20px] pb-[54px] pt-[42px] max-w-[350px];
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
 }
 </style>

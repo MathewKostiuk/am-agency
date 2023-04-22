@@ -4,7 +4,7 @@
     v-if="hero"
   >
     <div
-      class="flex flex-col justify-center text-white items-center text-center"
+      class="flex flex-col justify-center text-white items-center text-center lg:text-left lg:items-start"
     >
       <h1 class="text-heading-3 lg:text-heading-1 font-bold">
         {{ hero.heading }}
@@ -20,9 +20,7 @@
       <img
         :src="hero.image.url"
         :alt="hero.image.description"
-        :width="hero.image.width"
-        :height="hero.image.height"
-        class="object-cover w-full h-full aspect-square rounded-full border-8 border-white"
+        class="object-cover h-full aspect-square rounded-full border-8 border-white max-h-[345px]"
       />
     </div>
   </section>

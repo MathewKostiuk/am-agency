@@ -1,7 +1,7 @@
 <template>
   <nav
     v-if="menu"
-    class="relative text-white px-[50px] lg:px-[100px] py-[30px] flex items-center justify-between"
+    class="relative text-white px-[20px] lg:px-[100px] py-[30px] flex items-center justify-between"
     :class="{ 'bg-primary': !open, 'bg-white': open }"
   >
     <h1>
