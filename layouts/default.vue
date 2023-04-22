@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <main class="grid gap-8">
+  <main class="grid gap-16">
     <slot />
   </main>
 </template>

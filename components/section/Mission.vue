@@ -49,5 +49,4 @@ const query = gql`
 
 const { data } = await useAsyncQuery<MissionSectionResponse>(query);
 const mission = data.value?.missionSection;
-console.log({ mission });
 </script>
