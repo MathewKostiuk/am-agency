@@ -1,5 +1,11 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import svgLoader from 'vite-svg-loader'
+
 export default defineNuxtConfig({
+  vite: {
+    plugins: [
+      svgLoader(),
+    ]
+  },
   runtimeConfig: {
     gmailAddress: process.env.GMAIL_ADDRESS,
     gmailAppPassword: process.env.GMAIL_APP_PASSWORD,
