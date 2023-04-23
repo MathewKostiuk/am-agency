@@ -55,17 +55,18 @@
           :slides-per-view="1"
           :space-between="16"
           :pagination="{ clickable: true, type: 'bullets' }"
-          :auto-height="true"
           :style="{
             '--swiper-pagination-color': '#00677F',
             '--swiper-pagination-bottom': '2px',
           }"
+          class="pricing-swiper"
+          @init="updateSlidesHeight"
         >
           <SwiperSlide
             v-for="(priceObject, index) in priceSection.priceObjectsCollection
               .items"
             :key="index"
-            class="pricing-card flex flex-col items-center snap-center bg-white rounded-lg py-[32px] px-[34px]"
+            class="pricing-card flex flex-col items-center h-full bg-white rounded-lg py-[32px] px-[34px]"
           >
             <h3
               class="text-body-2 text-accent-dark font-medium font-hanken-grotesk"
@@ -163,10 +164,32 @@ const query = gql`
 
 const { data } = await useAsyncQuery<PriceSectionResponse>(query);
 const priceSection = data.value?.priceSection;
+
+const updateSlidesHeight = (swiper: { slides: any }) => {
+  const slides = swiper.slides;
+  let maxHeight = 0;
+
+  // Loop through slides to find the maximum height
+  slides.forEach((slide: { clientHeight: any }) => {
+    const slideHeight = slide.clientHeight;
+    if (slideHeight > maxHeight) {
+      maxHeight = slideHeight;
+    }
+  });
+
+  // Set the maximum height for all slides
+  slides.forEach((slide: { style: { height: string } }) => {
+    slide.style.height = maxHeight + "px";
+  });
+};
 </script>
 
 <style lang="scss" scoped>
 .pricing-card {
   display: flex !important;
+}
+
+.pricing-swiper {
+  @apply pb-[32px];
 }
 </style>
