@@ -3,6 +3,7 @@
   <main class="grid gap-16">
     <slot />
   </main>
+  <Footer />
 </template>
 
 <style lang="scss">
