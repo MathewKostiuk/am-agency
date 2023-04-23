@@ -3,5 +3,6 @@
   <SectionServices />
   <SectionMission />
   <SectionProcess />
+  <SectionPricing />
   <SectionContact />
 </template>

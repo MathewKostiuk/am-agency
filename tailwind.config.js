@@ -13,6 +13,7 @@ export default {
         "body-text": "#3D372D",
         "border-primary": "#E6F0F2",
         focus: "#FCDABE",
+        neutral: "#3D372D",
       },
       fontSize: {
         "body-1": ["24px", "31px"],
