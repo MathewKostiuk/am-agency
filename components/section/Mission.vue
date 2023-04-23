@@ -4,7 +4,7 @@
     v-if="mission"
   >
     <div class="text-center">
-      <p class="text-body-1 lg:text-heading-4">
+      <p class="text-body-1 lg:text-heading-4 font-kumbh-sans">
         {{ mission.content }}
       </p>
     </div>

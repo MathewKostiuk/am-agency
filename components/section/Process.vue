@@ -27,10 +27,16 @@
             class="absolute inset-0 block w-full h-full bg-primary rounded-full opacity-10"
           ></span>
         </div>
-        <h3 class="text-body-1 md:text-heading-4 font-bold" v-if="heading">
+        <h3
+          class="text-body-1 md:text-heading-4 font-bold font-kumbh-sans"
+          v-if="heading"
+        >
           {{ heading }}
         </h3>
-        <p class="text-body-3 text-body-text" v-if="content">
+        <p
+          class="text-body-3 text-body-text font-hanken-grotesk"
+          v-if="content"
+        >
           {{ content }}
         </p>
         <DoubleArrow

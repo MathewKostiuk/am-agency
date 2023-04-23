@@ -2,7 +2,7 @@
   <section v-if="priceSection" class="bg-border-primary max-w-[100vw]">
     <div class="section px-[20px] py-[80px] mx-auto lg:px-[100px]">
       <h2
-        class="text-heading-4 text-primary sm:text-heading-2 font-semibold text-center"
+        class="text-heading-4 text-primary sm:text-heading-2 font-semibold text-center font-kumbh-sans"
         v-if="priceSection.heading"
       >
         {{ priceSection.heading }}
@@ -12,22 +12,22 @@
           v-for="(priceObject, index) in priceSection.priceObjectsCollection
             .items"
           :key="index"
-          class="flex flex-col items-center min-w-[374px] snap-center bg-white rounded-lg py-[32px] px-[34px]"
+          class="pricing-card flex flex-col items-center snap-center bg-white rounded-lg py-[32px] px-[34px]"
         >
           <h3
-            class="text-body-2 text-accent-dark font-medium"
+            class="text-body-2 text-accent-dark font-medium font-hanken-grotesk"
             v-if="priceObject.heading"
           >
             {{ priceObject.heading }}
           </h3>
           <h4
-            class="text-body-4 text-neutral font-medium mt-[24px]"
+            class="text-body-4 text-neutral font-medium font-hanken-grotesk mt-[24px]"
             v-if="priceObject.startingAt"
           >
             {{ priceObject.startingAt }}
           </h4>
           <h4
-            class="text-heading-4 text-neutral font-medium mt-[4px]"
+            class="text-heading-4 text-neutral font-medium mt-[4px] font-kumbh-sans"
             v-if="priceObject.price"
           >
             {{ priceObject.price }}
@@ -39,7 +39,7 @@
               v-for="(bulletPoint, index) in priceObject.bulletPointsCollection
                 .items"
               :key="index"
-              class="flex gap-2 items-center"
+              class="flex gap-2 items-center font-hanken-grotesk"
             >
               <Checkmark class="shrink-0" />
               {{ bulletPoint.content }}
@@ -48,7 +48,7 @@
         </div>
       </div>
       <p
-        class="text-body-4 text-body-text mt-[24px]"
+        class="text-body-4 text-body-text mt-[24px] font-hanken-grotesk"
         v-if="priceSection.disclaimer"
       >
         {{ priceSection.disclaimer }}
@@ -110,3 +110,9 @@ const query = gql`
 const { data } = await useAsyncQuery<PriceSectionResponse>(query);
 const priceSection = data.value?.priceSection;
 </script>
+
+<style lang="scss" scoped>
+.pricing-card {
+  min-width: calc(100vw - 40px);
+}
+</style>

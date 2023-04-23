@@ -24,7 +24,7 @@
   @apply px-[20px] mx-auto lg:px-[100px];
 
   &-heading {
-    @apply relative inline-block text-heading-4 sm:text-heading-2 font-semibold;
+    @apply relative inline-block text-heading-4 sm:text-heading-2 font-semibold font-kumbh-sans;
 
     &::after {
       @apply absolute left-0 bottom-[-20px] block w-[60px] h-[2px] bg-accent;

@@ -6,12 +6,12 @@
       <li
         v-for="(link, index) in menu?.linksCollection.items"
         :key="index"
-        class="text-body-4 text-white font-semibold"
+        class="text-body-4 text-white font-semibold font-hanken-grotesk"
       >
         <a :href="link.url">{{ link.title }}</a>
       </li>
     </ul>
-    <p class="text-body-4 text-background text-center">
+    <p class="text-body-4 text-background text-center font-hanken-grotesk">
       © 2023 AM agency - All rights reserved
     </p>
   </footer>

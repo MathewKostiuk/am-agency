@@ -14,7 +14,7 @@
       <li
         v-for="link in menu?.linksCollection?.items"
         :key="link.title"
-        class="text-body-2 font-bold"
+        class="text-body-2 font-bold font-hanken-grotesk"
       >
         <NuxtLink :to="link.url">{{ link.title }}</NuxtLink>
       </li>

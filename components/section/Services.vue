@@ -3,7 +3,7 @@
     v-if="ourServices"
     class="m-auto text-center px-[20px] lg:px-8 text-primary"
   >
-    <h2 class="section-heading">
+    <h2 class="section-heading font-kumbh-sans">
       {{ ourServices.heading }}
     </h2>
     <div class="grid grid-cols-1 gap-[20px] mt-[86px] lg:grid-cols-3">
@@ -26,13 +26,19 @@
             class="absolute inset-0 block w-full h-full bg-primary rounded-full opacity-10"
           ></span>
         </div>
-        <h3 class="text-body-1 md:text-heading-4 font-bold" v-if="heading">
+        <h3
+          class="text-body-1 md:text-heading-4 font-bold font-kumbh-sans"
+          v-if="heading"
+        >
           {{ heading }}
         </h3>
-        <h4 class="text-body-2" v-if="subheading">
+        <h4 class="text-body-2 font-hanken-grotesk" v-if="subheading">
           {{ subheading }}
         </h4>
-        <p class="text-body-3 text-body-text" v-if="description">
+        <p
+          class="text-body-3 text-body-text font-hanken-grotesk"
+          v-if="description"
+        >
           {{ description }}
         </p>
       </div>

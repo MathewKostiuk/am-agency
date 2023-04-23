@@ -6,13 +6,15 @@
     <div
       class="flex flex-col gap-4 justify-center text-white items-center text-center lg:text-left lg:items-start"
     >
-      <h1 class="text-heading-3 lg:text-heading-1 font-bold">
+      <h1
+        class="text-heading-3 lg:text-heading-1 font-semibold font-kumbh-sans"
+      >
         {{ hero.heading }}
       </h1>
-      <p class="text-body-2 lg:text-body-1">
+      <p class="text-body-2 lg:text-body-1 font-hanken-grotesk">
         {{ hero.content }}
       </p>
-      <a class="btn btn-primary" :href="hero?.buttonUrl">
+      <a class="btn btn-primary font-hanken-grotesk" :href="hero?.buttonUrl">
         {{ hero.buttonText }}
       </a>
     </div>

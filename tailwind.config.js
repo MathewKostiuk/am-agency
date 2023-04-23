@@ -15,6 +15,10 @@ export default {
         focus: "#FCDABE",
         neutral: "#3D372D",
       },
+      fontFamily: {
+        "kumbh-sans": ["Kumbh Sans", "sans-serif"],
+        "hanken-grotesk": ["Hanken Grotesk", "sans-serif"],
+      },
       fontSize: {
         "body-1": ["24px", "31px"],
         "body-2": ["20px", "26px"],

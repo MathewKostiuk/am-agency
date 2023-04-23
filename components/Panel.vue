@@ -9,7 +9,7 @@
       <li
         v-for="link in links"
         :key="link.title"
-        class="text-primary text-body-2 font-bold"
+        class="text-primary text-body-2 font-bold font-hanken-grotesk"
       >
         <NuxtLink :to="link.url">{{ link.title }}</NuxtLink>
       </li>
