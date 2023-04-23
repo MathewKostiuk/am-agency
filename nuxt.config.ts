@@ -12,7 +12,8 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/apollo'
+    '@nuxtjs/apollo',
+    'nuxt-swiper'
   ],
   apollo: {
     clients: {
