@@ -1,29 +1,37 @@
 <template>
   <section
-    class="section bg-primary grid md:grid-cols-2 gap-8 pt-8 pb-[145px]"
+    class="section bg-primary grid grid-cols-1 sm:grid-cols-2 flex gap-8 py-[83px]"
     v-if="hero"
   >
     <div
-      class="flex flex-col gap-4 justify-center text-white items-center text-center lg:text-left lg:items-start"
+      class="flex flex-col justify-center text-white items-center text-center lg:text-left lg:items-start"
     >
       <h1
         class="text-heading-3 lg:text-heading-1 font-semibold font-kumbh-sans"
       >
         {{ hero.heading }}
       </h1>
-      <p class="text-body-2 lg:text-body-1 font-hanken-grotesk">
+      <p class="text-body-2 lg:text-body-1 font-hanken-grotesk mt-8">
         {{ hero.content }}
       </p>
-      <a class="btn btn-primary font-hanken-grotesk" :href="hero?.buttonUrl">
+      <a
+        class="btn btn-primary font-hanken-grotesk mt-10"
+        :href="hero?.buttonUrl"
+      >
         {{ hero.buttonText }}
       </a>
     </div>
     <div class="flex justify-center">
-      <img
-        :src="hero.image.url"
-        :alt="hero.image.description"
-        class="object-cover h-full aspect-square rounded-full border-8 border-white max-h-[345px]"
-      />
+      <div class="relative">
+        <img
+          :src="hero.image.url"
+          :alt="hero.image.description"
+          class="object-cover h-full aspect-square rounded-full border-[11px] border-white max-h-[463px]"
+        />
+        <div
+          class="absolute w-[29px] h-[29px] bg-accent rounded-full top-[12.5%] right-[12.5%]"
+        ></div>
+      </div>
     </div>
   </section>
 </template>
