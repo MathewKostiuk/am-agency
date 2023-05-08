@@ -26,17 +26,19 @@
             class="absolute inset-0 block w-full h-full bg-primary rounded-full opacity-10"
           ></span>
         </div>
-        <h3
-          class="text-body-1 md:text-heading-4 font-bold font-kumbh-sans"
-          v-if="heading"
-        >
-          {{ heading }}
-        </h3>
-        <h4 class="text-body-2 font-hanken-grotesk" v-if="subheading">
-          {{ subheading }}
-        </h4>
+        <div v-if="heading || subheading" class="text-left">
+          <h3
+            class="text-body-1 md:text-heading-4 font-semibold font-kumbh-sans"
+            v-if="heading"
+          >
+            {{ heading }}
+          </h3>
+          <h4 class="text-body-2 font-hanken-grotesk mt-2" v-if="subheading">
+            {{ subheading }}
+          </h4>
+        </div>
         <p
-          class="text-body-3 text-body-text font-hanken-grotesk"
+          class="text-body-3 text-body-text text-left font-hanken-grotesk"
           v-if="description"
         >
           {{ description }}
