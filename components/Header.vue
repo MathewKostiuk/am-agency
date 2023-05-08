@@ -14,7 +14,7 @@
       <li
         v-for="link in menu?.linksCollection?.items"
         :key="link.title"
-        class="text-body-2 font-bold font-hanken-grotesk"
+        class="text-body-2 font-medium font-hanken-grotesk"
       >
         <NuxtLink :to="link.url">{{ link.title }}</NuxtLink>
       </li>
@@ -72,3 +72,21 @@ const toggle = () => {
   open.value = !open.value;
 };
 </script>
+
+<style lang="scss" scoped>
+ul {
+  a[aria-current="page"] {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: 2px;
+      background-color: #feffff;
+    }
+  }
+}
+</style>
