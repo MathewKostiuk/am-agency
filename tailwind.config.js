@@ -14,6 +14,12 @@ export default {
         "border-primary": "#E6F0F2",
         focus: "#FCDABE",
         neutral: "#3D372D",
+        process: {
+          100: "#E6F0F2",
+          200: "#D9E8EC",
+          300: "#B0D0D7",
+          400: "#00677F",
+        },
       },
       fontFamily: {
         "kumbh-sans": ["Kumbh Sans", "sans-serif"],

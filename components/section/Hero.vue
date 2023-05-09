@@ -1,7 +1,8 @@
 <template>
   <section
-    class="section bg-primary grid grid-cols-1 sm:grid-cols-2 flex gap-8 py-[83px]"
+    class="section bg-primary grid grid-cols-1 sm:grid-cols-2 gap-8 py-[83px] bg-cover"
     v-if="hero"
+    style="background-image: url('/img/hero-background.png')"
   >
     <div
       class="flex flex-col justify-center text-white items-center text-center lg:text-left lg:items-start"
