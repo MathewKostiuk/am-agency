@@ -22,7 +22,7 @@
         {{ hero.buttonText }}
       </a>
     </div>
-    <div class="flex justify-center">
+    <div class="flex justify-center mt-12 sm:mt-0">
       <div class="relative">
         <img
           :src="hero.image.url"

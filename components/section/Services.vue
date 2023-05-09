@@ -1,7 +1,7 @@
 <template>
   <section
     v-if="ourServices"
-    class="m-auto text-center px-[20px] lg:px-8 text-primary"
+    class="m-auto text-center px-[20px] lg:px-8 text-primary mt-16"
   >
     <h2 class="section-heading font-kumbh-sans">
       {{ ourServices.heading }}

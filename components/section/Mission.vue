@@ -1,11 +1,11 @@
 <template>
   <section
-    class="section bg-primary text-white bg-cover bg-center relative h-[280px] w-full"
+    class="section bg-primary text-white bg-cover bg-center relative h-[280px] w-full mt-16"
     v-if="mission"
     style="background-image: url('/img/sunrise.png')"
   >
     <div
-      class="absolute inset-0 bg-primary opacity-80 text-center py-[56px] sm:py-[80px] px-[40px]"
+      class="absolute inset-0 bg-primary opacity-80 text-center flex items-center justify-center py-[56px] sm:py-[80px] px-[40px]"
     >
       <p class="text-body-1 lg:text-heading-4 font-kumbh-sans">
         {{ mission.content }}

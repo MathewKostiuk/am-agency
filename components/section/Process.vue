@@ -1,7 +1,7 @@
 <template>
   <section
     v-if="processSection"
-    class="m-auto text-center px-[20px] lg:px-8 text-primary"
+    class="m-auto text-center px-[20px] lg:px-8 text-primary mt-16"
   >
     <h2 class="section-heading">
       {{ processSection.heading }}
