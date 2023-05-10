@@ -6,7 +6,9 @@
     <h2 class="section-heading font-kumbh-sans">
       {{ ourServices.heading }}
     </h2>
-    <div class="grid grid-cols-1 gap-[20px] mt-[86px] lg:grid-cols-3">
+    <div
+      class="grid grid-cols-1 justify-items-center gap-[20px] mt-[86px] lg:grid-cols-3"
+    >
       <div
         v-for="{ heading, subheading, image, description } in ourServices
           .serviceCollection.items"

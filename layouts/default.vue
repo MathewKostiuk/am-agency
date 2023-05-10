@@ -34,7 +34,7 @@
 }
 
 .card {
-  @apply flex flex-col gap-4 items-start justify-between rounded-lg px-[32px] py-[40px] max-w-[450px];
+  @apply flex flex-col gap-4 items-start rounded-lg px-[32px] py-[40px] max-w-[450px];
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
 }
 </style>

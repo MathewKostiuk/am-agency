@@ -1,12 +1,11 @@
 <template>
-  <div class="mt-16">
-    <SectionBannerImage
-      v-if="mission"
-      :text="mission.content"
-      :image="mission.image"
-      :isHeading="mission.isHeading"
-    />
-  </div>
+  <SectionBannerImage
+    v-if="banner"
+    :text="banner.content"
+    :image="banner.image"
+    :isHeading="banner.isHeading"
+  />
+  <SectionContact />
 </template>
 
 <script lang="ts" setup>
@@ -26,7 +25,7 @@ type BannerImageSectionResponse = {
 
 const query = gql`
   query missionSectionEntryQuery {
-    missionSection(id: "1EEiW7hsZoBk06RPL90z5K") {
+    missionSection(id: "1L0PAWmWIvtsDgGe1GGLIF") {
       content
       image {
         url
@@ -41,5 +40,5 @@ const query = gql`
 `;
 
 const { data } = await useAsyncQuery<BannerImageSectionResponse>(query);
-const mission = data.value?.missionSection;
+const banner = data.value?.missionSection;
 </script>

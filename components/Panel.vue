@@ -1,6 +1,6 @@
 <template>
   <div
-    class="panel absolute top-full left-0 w-full border-border-primary"
+    class="panel absolute top-full left-0 w-full border-border-primary overflow-hidden max-h-0 z-10"
     :class="{ 'panel--open border-y-[1px]': open, 'panel--closed': !open }"
   >
     <ul
@@ -29,9 +29,7 @@ defineProps<{
 
 <style lang="scss" scoped>
 .panel {
-  max-height: 0;
   transition: max-height 0.3s ease-in-out;
-  overflow: hidden;
 
   &--open {
     max-height: 450px;

@@ -12,6 +12,7 @@ export default {
         "background-2": "#FBFBFB",
         "body-text": "#3D372D",
         "border-primary": "#E6F0F2",
+        input: "#FAFAFA",
         focus: "#FCDABE",
         neutral: "#3D372D",
         process: {
