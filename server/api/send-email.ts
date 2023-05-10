@@ -3,7 +3,8 @@ import nodemailer from "nodemailer";
 const runtimeConfig = useRuntimeConfig();
 
 type EmailFormData = {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   message: string;
 };
@@ -20,7 +21,7 @@ const transporter = nodemailer.createTransport({
 export default defineEventHandler(async (event) => {
   const req = event.node.req as IncomingMessage;
   const res = event.node.res as ServerResponse;
-  const { name, email, message } = JSON.parse(
+  const { firstName, lastName, email, message } = JSON.parse(
     await getRawBody(req)
   ) as EmailFormData;
 
@@ -28,7 +29,7 @@ export default defineEventHandler(async (event) => {
   const mailOptions = {
     to: `${runtimeConfig.gmailAddress}`,
     subject: "Website contact form submission",
-    text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    text: `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`
   };
 
   try {

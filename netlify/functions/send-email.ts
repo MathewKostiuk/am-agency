@@ -2,9 +2,10 @@ import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 import nodemailer from 'nodemailer'
 
 type EmailFormData = {
-  name: string | null;
-  email: string | null;
-  message: string | null;
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
 };
 
 // Configure nodemailer with gmail
@@ -17,13 +18,13 @@ const transporter = nodemailer.createTransport({
 });
 
 const handler: Handler = async (event: HandlerEvent) => {
-  const { name, email, message } = JSON.parse(event.body || '{}') as EmailFormData
+  const { firstName, lastName, email, message } = JSON.parse(event.body || '{}') as EmailFormData
 
   // Create an email options object
   const mailOptions = {
     to: `${process.env.GMAIL_ADDRESS}`,
     subject: 'Website contact form submission',
-    text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    text: `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`
   }
 
   try {
